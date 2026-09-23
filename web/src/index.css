@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 217 91% 55%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 214 60% 94%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 217 91% 55%;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: 224 32% 7%;
+  --foreground: 213 31% 91%;
+  --card: 224 28% 10%;
+  --card-foreground: 213 31% 91%;
+  --popover: 223 28% 12%;
+  --popover-foreground: 213 31% 91%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 223 22% 15%;
+  --muted-foreground: 216 15% 60%;
+  --accent: 220 22% 20%;
+  --accent-foreground: 213 31% 91%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 220 16% 21%;
+  --input: 220 18% 16%;
+  --ring: 217 91% 60%;
+}
+
+html, body, #root { height: 100%; }
+body { @apply bg-background text-foreground; font-family: ui-sans-serif, system-ui, "Microsoft YaHei", sans-serif; }
+
+/* 原生控件适配深色主题 */
+select option {
+  background-color: hsl(var(--popover));
+  color: hsl(var(--popover-foreground));
+}
+select option:disabled { color: hsl(var(--muted-foreground)); }
+input[type="checkbox"], input[type="radio"] {
+  accent-color: hsl(var(--primary));
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 6px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / 0.6); background-clip: content-box; }
+
+/* xterm 容器填满 */
+.xterm-host .xterm { height: 100%; padding: 4px; }

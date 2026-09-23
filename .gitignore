@@ -1,0 +1,22 @@
+# 密钥与本地状态 / secrets & local state
+.env
+termirai-data/
+*.local
+
+# 前端 / frontend
+web/node_modules/
+# 构建产物由 vite 生成，仅保留占位 index.html 使 go:embed 可编译
+web/dist/*
+!web/dist/index.html
+
+# Go / 构建产物 / build outputs
+dist/
+*.exe
+*.test
+*.out
+
+# 编辑器与系统 / editor & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
